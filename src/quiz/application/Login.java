@@ -74,7 +74,15 @@ public class Login extends JFrame implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent ae) {
         
-        
+        if(ae.getSource()==rules)
+        {
+            setVisible(false);
+            new Rules();
+        }
+        else if(ae.getSource()==back)
+        {
+            setVisible(false);
+        }
         
         
     }
