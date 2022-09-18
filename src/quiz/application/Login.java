@@ -14,6 +14,8 @@ import javax.swing.JTextField;
 
 public class Login extends JFrame implements ActionListener{
     
+    JTextField tfname;
+    
     JButton rules,back;
 
     public Login() {
@@ -37,7 +39,7 @@ public class Login extends JFrame implements ActionListener{
         name.setForeground(Color.blue);
         add(name);
         
-        JTextField tfname=new JTextField();
+        tfname=new JTextField();
         tfname.setBounds(735,200,300,25);
         tfname.setFont(new Font("Times New Roman",Font.BOLD,20));
         add(tfname);
@@ -76,8 +78,9 @@ public class Login extends JFrame implements ActionListener{
         
         if(ae.getSource()==rules)
         {
+            String name=tfname.getText();
             setVisible(false);
-            new Rules();
+            new Rules(name);
         }
         else if(ae.getSource()==back)
         {
